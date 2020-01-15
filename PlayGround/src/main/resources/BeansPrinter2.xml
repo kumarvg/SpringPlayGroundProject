@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- bean definitions here -->
+    <!-- default primery =true , autowire  by name , by type , default constructer means no-->
+    
+    
+ <bean  id = "mpp" name = "prt2"  class = "com.Vishal.PlayGround2.MultiPurposePrinter"   init-method="init" destroy-method="des"   factory-method="getObj" factory-bean="mppF"  >
+  
+  
+ <!--   <constructor-arg name="printer" ref = "printer1"/>
+   <constructor-arg index="1" ref= "scanner1"/>
+    -->
+    	  <property name="printer" ref="printer"/>
+       	  <property name="scanner" ref="scanner1"/>
+   
+   
+   <property name="model" value="SAMSUMG"/>
+  
+   
+ 	  
+ </bean>
+ 
+<!--  
+ <bean  id = "mpp" class = "com.Vishal.PlayGround2.MultiPurposePrinter" init-method="init" destroy-method="des"  >
+  
+  
+   
+   
+   
+   <property name="model" value="SAMSUMG"/>
+   <property name="printer" ref="printer"/>
+   <constructor-arg index="0"  ref= "printer">  </constructor-arg>
+  --> 
+   
+ 	  
+<!--   </bean> -->
+ 
+ <bean id ="printer" class ="com.Vishal.PlayGround.DotMatrixPrinter" ></bean>
+    
+    <!-- 
+     <bean  id = "mpp2" class = "com.Vishal.PlayGround.MultiPurposePrinter">
+   <constructor-arg name="printer" ref = "printer1"/>
+   <constructor-arg index="1" ref= "scanner1"/>
+   <property name="model" value="SAMSUMG"/>
+ 	  <property name="printer" ref="printer1"/>
+ 	   	
+ 	   	 <property name="scanner" ref="scanner1"/> 
+ 	  
+ </bean>
+-->
+     
+     
+    <!-- Here we hideing the object the of printer and will try to assigen this through proprty tag  -->
+    
+<!-- <bean id="printer1" class ="com.Vishal.PlayGround.LaserPrinter" scope="prototype" ></bean>
+<bean id ="printer" class ="com.Vishal.PlayGround.DotMatrixPrinter"></bean> -->
+
+<bean id ="scanner1" class ="com.Vishal.PlayGround.BlueScanner"  ></bean>
+
+<bean id ="mppF" class ="com.Vishal.PlayGround2.MPPFactory"></bean>
+  
+</beans>
