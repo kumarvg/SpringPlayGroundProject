@@ -3,12 +3,17 @@ package com.Vishal.PlayGround;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 
+import com.Vishal.PlayGround2.MPPConfig;
 import com.Vishal.PlayGround2.MultiPurposePrinter;
 
 @SpringBootApplication
 @ImportResource("classpath:BeansPrinter.xml")
+@ComponentScan(basePackages = "com.Vishal")
+
 public class PlayGroundApplication {
 
 	public static void main(String[] args) {
@@ -18,17 +23,19 @@ public class PlayGroundApplication {
 		
 		  //Printer pt = (Printer) ctx.getBean(DotMatrixPrinter.class);
 		  
-		 MultiPurposePrinter pt =(MultiPurposePrinter) ctx.getBean("prt2");
+		 MultiPurposePrinter pt =(MultiPurposePrinter) ctx.getBean("mpp");
 		  
 		  //MultiPurposePrinter pt2 =(MultiPurposePrinter) ctx.getBean("mpp2");
 		  
 		  
-		  Printer printer = (Printer) ctx.getBean("printer");
+		  Printer printer = (Printer) ctx.getBean("dotMatrixPrinter");
 		  
 		  
 		  System.out.println("model " + pt.getModel());
 		  
-		  pt.scaneApp(); pt.printerApp();
+		  pt.scaneApp(); 
+		  
+		  pt.printerApp();
 		  
 		  
 		  

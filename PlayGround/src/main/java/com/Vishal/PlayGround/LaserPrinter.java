@@ -1,5 +1,9 @@
 package com.Vishal.PlayGround;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
 public class LaserPrinter implements Printer {
 
 	

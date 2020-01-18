@@ -12,12 +12,12 @@
     <!-- default primery =true , autowire  by name , by type , default constructer means no-->
     
     
- <bean  id = "mpp" name = "prt2"  class = "com.Vishal.PlayGround2.MultiPurposePrinter"   init-method="init" destroy-method="des"   factory-method="getObj" factory-bean="mppF"  >
+<!--  <bean  id = "mpp" name = "prt2"  class = "com.Vishal.PlayGround2.MultiPurposePrinter"   init-method="init" destroy-method="des"   factory-method="getObj" factory-bean="mppF"  >
   
   
- <!--   <constructor-arg name="printer" ref = "printer1"/>
+   <constructor-arg name="printer" ref = "printer1"/>
    <constructor-arg index="1" ref= "scanner1"/>
-    -->
+   
     	  <property name="printer" ref="printer"/>
        	  <property name="scanner" ref="scanner1"/>
    
@@ -27,7 +27,10 @@
    
  	  
  </bean>
- 
+  -->
+  
+  
+  
 <!--  
  <bean  id = "mpp" class = "com.Vishal.PlayGround2.MultiPurposePrinter" init-method="init" destroy-method="des"  >
   
@@ -43,7 +46,7 @@
  	  
 <!--   </bean> -->
  
- <bean id ="printer" class ="com.Vishal.PlayGround.DotMatrixPrinter" ></bean>
+<!--  <bean id ="printer" class ="com.Vishal.PlayGround.DotMatrixPrinter" ></bean> -->
     
     <!-- 
      <bean  id = "mpp2" class = "com.Vishal.PlayGround.MultiPurposePrinter">
@@ -60,12 +63,12 @@
      
     <!-- Here we hideing the object the of printer and will try to assigen this through proprty tag  -->
     
-<!-- <bean id="printer1" class ="com.Vishal.PlayGround.LaserPrinter" scope="prototype" ></bean>
+<!-- <bean id="printer1" class ="com.Vishal.PlayGround.	" scope="prototype" ></bean>
 <bean id ="printer" class ="com.Vishal.PlayGround.DotMatrixPrinter"></bean> -->
 
-<bean id ="scanner1" class ="com.Vishal.PlayGround.BlueScanner"  ></bean>
-
-<bean id ="mppF" class ="com.Vishal.PlayGround2.MPPFactory"></bean>
+<!-- <bean id ="scanner1" class ="com.Vishal.PlayGround.BlueScanner"  ></bean>
+ -->
+<!-- <bean id ="mppF" class ="com.Vishal.PlayGround2.MPPFactory"></bean> -->
   
   
  <!--  <import resource="BeansPrinter2.xml"/>

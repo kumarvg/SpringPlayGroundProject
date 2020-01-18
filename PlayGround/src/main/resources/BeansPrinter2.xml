@@ -60,7 +60,7 @@
 <!-- <bean id="printer1" class ="com.Vishal.PlayGround.LaserPrinter" scope="prototype" ></bean>
 <bean id ="printer" class ="com.Vishal.PlayGround.DotMatrixPrinter"></bean> -->
 
-<bean id ="scanner1" class ="com.Vishal.PlayGround.BlueScanner"  ></bean>
+<bean id ="scanner1" class ="com.Vishal.PlayGround.BlueScanner"  lazy-init="true" ></bean>
 
 <bean id ="mppF" class ="com.Vishal.PlayGround2.MPPFactory"></bean>
   
